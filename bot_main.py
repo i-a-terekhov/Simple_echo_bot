@@ -43,7 +43,7 @@ async def main():
     # Инициализация планировщика
     scheduler = AsyncIOScheduler()
     # Запуск задачи для отправки в отведенный период времени
-    scheduler.add_job(send_time, IntervalTrigger(minutes=5), max_instances=2)  # Увеличиваем max_instances до 2
+    scheduler.add_job(send_time, IntervalTrigger(minutes=10), max_instances=2)  # Увеличиваем max_instances до 2
     scheduler.start()
     await dp.start_polling(bot)
 
